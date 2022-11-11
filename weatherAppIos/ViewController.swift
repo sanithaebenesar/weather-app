@@ -12,7 +12,7 @@ class ViewController: UIViewController, secondsectionTableViewCellDelegate {
 
     @IBOutlet weak var searchTable: UITableView!
     
-    var dataArray: [[String:Any]] = []
+    var dataArray: [Weather] = [] //Wether models
     var Index = 0
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,30 +65,42 @@ extension ViewController : UITableViewDelegate,UITableViewDataSource{
         if indexPath.section == 0{
             
             let cell_1 = tableView.dequeueReusableCell(withIdentifier: "firstsectionTableViewCell", for: indexPath) as! firstsectionTableViewCell
+            
             let data = dataArray[indexPath.row]
-            if let location = data["location"] as? [String:Any], let place = location["name"] as? String {
-                cell_1.locationNameLabel.text = place
+            
+           // if let location = data["location"] as? [String:Any], let place = location["name"] as? String {
+           //     cell_1.locationNameLabel.text = place
+           // }
+            if let location = data.location?.name {
+                cell_1.locationNameLabel.text = location
             }
             
             switch (Index) {
             case 0 :
-            if let temp = data["current"] as? [String:Any], let temp_c = temp["temp_c"] as? Double {
-                cell_1.tempLabel.text = "\(temp_c)"
+            //if let temp = data["current"] as? [String:Any], let temp_c = temp["temp_c"] as? Double {
+             //   cell_1.tempLabel.text = "\(temp_c)"
+           // }
+            if let temp_c = data.current?.temp_c{
+            cell_1.tempLabel.text = "\(temp_c)"
             }
-    
             case 1:
-            if let temp = data["current"] as? [String:Any], let temp_f = temp["temp_f"] as? Double {
-                cell_1.tempLabel.text = "\(temp_f)"
+                //if let temp = data["current"] as? [String:Any], let temp_f = temp["temp_f"] as? Double {
+           //     cell_1.tempLabel.text = "\(temp_f)"
+          //  }
+            if let temp_f = data.current?.temp_c{
+            cell_1.tempLabel.text = "\(temp_f)"
             }
+
             default:
                 print("unexpected")
                
             }
             
            
-            if let day = data["location"] as? [String:Any], let updateTime = day["localtime" ] as? String  {
-    
-                let dateTime = updateTime
+          //  if let day = data["location"] as? [String:Any], let updateTime = day["localtime" ] as? String  {
+            if let day = data.current?.last_updated {
+               // let dateTime = updateTime
+                let dateTime = day
                 let dateFormatter = DateFormatter()
                 dateFormatter.dateFormat = "yyyy-MM-dd HH:mm "
 
@@ -117,7 +129,7 @@ extension ViewController : UITableViewDelegate,UITableViewDataSource{
     
 }
 extension ViewController : secViewControllerDelegate {
-    func weatherUpdate(outputData: [String : Any]?)  {
+    func weatherUpdate(outputData: Weather?)  {
             if let outputData = outputData {
                 dataArray.append(outputData)
                 searchTable.reloadData()

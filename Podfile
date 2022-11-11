@@ -6,5 +6,6 @@ target 'weatherAppIos' do
   use_frameworks!
 
   # Pods for weatherAppIos
+pod 'ObjectMapper', '~> 3.5'
 pod 'Alamofire'
 end

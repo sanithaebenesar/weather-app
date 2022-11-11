@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4655602B291E53CF00ACDB2E /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4655602A291E53CF00ACDB2E /* Models.swift */; };
 		46CF1B1528F532510015338D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46CF1B1428F532510015338D /* AppDelegate.swift */; };
 		46CF1B1728F532510015338D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46CF1B1628F532510015338D /* SceneDelegate.swift */; };
 		46CF1B1928F532510015338D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46CF1B1828F532510015338D /* ViewController.swift */; };
@@ -22,6 +23,7 @@
 
 /* Begin PBXFileReference section */
 		30D16E4F723FF57838A24E3B /* Pods-weatherAppIos.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-weatherAppIos.release.xcconfig"; path = "Target Support Files/Pods-weatherAppIos/Pods-weatherAppIos.release.xcconfig"; sourceTree = "<group>"; };
+		4655602A291E53CF00ACDB2E /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		46CF1B1128F532510015338D /* weatherAppIos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = weatherAppIos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		46CF1B1428F532510015338D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		46CF1B1628F532510015338D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 				46CF1B1D28F532540015338D /* Assets.xcassets */,
 				46CF1B1F28F532540015338D /* LaunchScreen.storyboard */,
 				46CF1B2228F532540015338D /* Info.plist */,
+				4655602A291E53CF00ACDB2E /* Models.swift */,
 			);
 			path = weatherAppIos;
 			sourceTree = "<group>";
@@ -225,6 +228,7 @@
 				46CF68A128F5373F007CAAAA /* secViewController.swift in Sources */,
 				46CF68A928F5437E007CAAAA /* secondsectionTableViewCell.swift in Sources */,
 				46CF1B1728F532510015338D /* SceneDelegate.swift in Sources */,
+				4655602B291E53CF00ACDB2E /* Models.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
